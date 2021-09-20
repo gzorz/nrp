@@ -283,6 +283,11 @@
     var marker = L.marker([45.74112, 14.37712], {icon: NRPIcon}).addTo(map);
     marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Opazovalnica Otoški grič</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
+    var marker = L.marker([45.7898, 14.4081])
+    .addTo(map)
+    .bindPopup("<h1>naslov</h1>")
+    .openPopup();
+
         </script>
     </body>
 </html>
