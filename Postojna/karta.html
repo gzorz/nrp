@@ -38,7 +38,7 @@
         <script src="data/PohodniskePoti_3.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:24, minZoom:12
+            zoomControl:true, maxZoom:18, minZoom:15
         }).setView([45.8303,14.2524], 16);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
@@ -178,6 +178,7 @@
     var marker = L.marker([45.77273, 14.35753], {icon: greenIcon}).addTo(map).bindPopup("<h3>Turistično - informacijski center</h3> <p>Dolenje Jezero 68, 1380 Cerknica<br>mail: tic@notranjski-park.si<br> tel: 01 709 36 36<br>gsm: 031 668 223<br><br><h4>DELOVNI ČAS:</h4><b>Poletni obratovalni čas:</b><br> od 15. aprila do 30. septembra.<br>Ponedeljek: zaprto <br>Torek: 10:00 - 16:00<br>Sreda: 10:00 - 16:00<br>Četrtek: 10:00 - 16:00<br>Petek: 10:00 - 16:00<br>Sobota, nedelja, prazniki: 9:00 - 18:00<br><b>Zimski obratovalni čas:</b><br> od 1. oktobra do 14. aprila.<br>Ponedeljek: zaprto<br>Torek: 10:00 - 16:00<br>Sreda: 10:00 - 16:00<br>Četrtek: 10:00 - 16:00<br>Petek: 10:00 - 16:00<br>Sobota, nedelja, prazniki: 10:00 - 16:00<br> <a href='https://www.notranjski-park.si/pomembne-informacije' </p><img src='./images/tic.jpg' width='300' /></a>");
     marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 12pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b>TIC NRP</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
+
         //1-izhodišče
     var NRPIcon = L.icon({
         iconUrl: 'nrp-logo-rjav-brezteksta.png',
@@ -185,7 +186,16 @@
         });
 
     var marker = L.marker([45.82701, 14.26497], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Kuharca</h3> <p>Cerkniško jezero, ki je te dni sicer bolj polje, saj je voda v njem presahnila, lahko odslej opazujete tudi sede, na novih lesenih klopeh ob usmerjeni sprehajalni poti Drvošec. Ta, kot smo že večkrat zapisali, poteka od požiralnikov Rešeto do mostu v Vratih pred vasjo Otok. Večinoma poteka skozi gozd, v katerega se povzpnete pri Ribiški koči. Več lesenih klopi se nahaja na razgledni točki Ribiški kot. Druga vrsta v krog postavljenih klopi vas čaka na vzpetini Kleni vrh, ki ponuja dih jemajoč pogled na jezero in goro Slivnico nad njim..<br> <a href='https://www.notranjski-park.si/obiskovanje/aktivnosti/pohodnistvo/pot-drvosec' </p><img src='./images/kuharca.jpg' width='300' /></a>");
-    marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b>1 - Izhodišče</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+    marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b>Izhodišče in uvod </b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+    //1-mejniki
+    var NRPIcon = L.icon({
+        iconUrl: 'nrp-logo-rjav-brezteksta.png',
+        iconSize: [30, 30], // size of the icon
+        });
+
+    var marker = L.marker([45.82485, 14.2606], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Kuharca</h3> <p>Cerkniško jezero, ki je te dni sicer bolj polje, saj je voda v njem presahnila, lahko odslej opazujete tudi sede, na novih lesenih klopeh ob usmerjeni sprehajalni poti Drvošec. Ta, kot smo že večkrat zapisali, poteka od požiralnikov Rešeto do mostu v Vratih pred vasjo Otok. Večinoma poteka skozi gozd, v katerega se povzpnete pri Ribiški koči. Več lesenih klopi se nahaja na razgledni točki Ribiški kot. Druga vrsta v krog postavljenih klopi vas čaka na vzpetini Kleni vrh, ki ponuja dih jemajoč pogled na jezero in goro Slivnico nad njim..<br> <a href='https://www.notranjski-park.si/obiskovanje/aktivnosti/pohodnistvo/pot-drvosec' </p><img src='./images/kuharca.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b>1 - Mejniki</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
     //2-Malni
     var NRPIcon = L.icon({
@@ -232,7 +242,7 @@
     var marker = L.marker([45.82296, 14.24502], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
     marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>6 - Kačja vas</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
-    //7-Kačja vas
+    //8 - Ravbarjev stolp
     var NRPIcon = L.icon({
         iconUrl: 'nrp-logo-rjav-brezteksta.png',
         iconSize: [30, 30], // size of the icon
@@ -241,43 +251,65 @@
     var marker = L.marker([45.82260,14.24726], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
     marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>7 - Ravbarjev stolp in žaga</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
-    //Sv. Marija
+    //9 - Mejni prehod Haasberk
     var NRPIcon = L.icon({
-        
+        iconUrl: 'nrp-logo-rjav-brezteksta.png',
         iconSize: [30, 30], // size of the icon
         });
 
-    var marker = L.marker([45.82260,14.24726], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
-    marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>7 - Ravbarjev stolp in žaga</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
-    
-    //Slivnica
-    var marker = L.marker([45.83811, 14.23916])
-    .addTo(map)
-    .bindPopup("<h3>Grmada</h3> <p>Gora Slivnica se nahaja na vzhodni strani Cerkniškega jezera nad naseljem Cerknica. Oblo sleme se dviga od Gradišča (858 m) do najvišjega vrha Velike Slivnice (1114 m). Južna in jugozahodna pobočja so nerazčlenjena in delno porasla z listnatim in iglastim gozdom. Severna pobočja se strmo spuščajo proti dolini Cerkniščice. Travniki in pašniki se zaradi postopnega pogozdovanja in zaraščanja hitro krčijo. Z vrha hriba, ki ga sestavljata jurski dolomit in deloma zakraseli apnenec, je lep razgled na Cerkniško jezero, Notranjsko podolje in okoliške planote. Ob vznožju Slivnice je več kraških izvirov.<br> <a href='https://sl.wikipedia.org/wiki/Slivnica_(vzpetina)' </p><img src='./images/slivnica.jpg' width='300' /></a>");
-    
-    //Rakov skocjan
-    var marker = L.marker([45.791, 14.2955])
-    .addTo(map)
-    .bindPopup("<h3>Rakov Škocjan</h3> <p>Rakov Škocjan je kraška dolina ob severnem vznožju Javornikov, nastala z udiranjem in rušenjem stropa kraške jame. To dokazujeta 42 m visoki Mali naravni most, 37 m visoki Veliki naravni most ter soteski za njima.Po dnu ravnega ilovnatega dna vijuga potok Rak, obdan z lazi in poplavnimi travniki. Rak polnijo vode, ki se skozi podzemlje stekajo s Cerkniškega polja in izpod Javornikov. Rečica priteče na površje iz Zelških jam na vzhodni strani doline, ponikne pa v Tkalca jami na zahodnem delu.Skupaj s Cerkniškim jezerom in Križno jamo je Rakov Škocjan razglašen za mednarodno pomembno mokrišče - Ramsarsko območje. Dolina je tudi prvi slovenski krajinski park, ustanovljen že leta 1949. Po dolini je, kot se za tako naravno znamenitost spodobi, speljana tudi naravoslovna učna pot.<br> <a href='https://www.notranjski-park.si/narava/naravne-znamenitosti/rakov-skocjan' </p><img src='./images/rakov.jpg' width='300' /></a>");
+    var marker = L.marker([45.82849, 14.26415], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #643c00; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>8 - Mejni prehod Haasberk</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
 
-    //Rakov skocjan
-    var marker = L.marker([45.791, 14.2955])
-    .addTo(map)
-    .bindPopup("<h3>Rakov Škocjan</h3> <p>Rakov Škocjan je kraška dolina ob severnem vznožju Javornikov, nastala z udiranjem in rušenjem stropa kraške jame. To dokazujeta 42 m visoki Mali naravni most, 37 m visoki Veliki naravni most ter soteski za njima.Po dnu ravnega ilovnatega dna vijuga potok Rak, obdan z lazi in poplavnimi travniki. Rak polnijo vode, ki se skozi podzemlje stekajo s Cerkniškega polja in izpod Javornikov. Rečica priteče na površje iz Zelških jam na vzhodni strani doline, ponikne pa v Tkalca jami na zahodnem delu.Skupaj s Cerkniškim jezerom in Križno jamo je Rakov Škocjan razglašen za mednarodno pomembno mokrišče - Ramsarsko območje. Dolina je tudi prvi slovenski krajinski park, ustanovljen že leta 1949. Po dolini je, kot se za tako naravno znamenitost spodobi, speljana tudi naravoslovna učna pot.<br> <a href='https://www.notranjski-park.si/narava/naravne-znamenitosti/rakov-skocjan' </p><img src='./images/rakov.jpg' width='300' /></a>");
-    //Spicka
-    var marker = L.marker([45.8353, 14.3969])
-    .addTo(map)
-    .bindPopup("<h3>Špičasto Stražišče (Špička)</h3> <p>Res ni težko ugotoviti, zakaj se vrh severno od Begunj imenuje »Špička«. Že od daleč namreč lahko vidimo, kako se zašiljeno dviga z Meniševske planote. Poti na Špičko je več, markirana vodi iz Begunj, vrh pa ponuja lep razgled na Slivnico in okoliške hribe ter vasi.<br> <a href='https://www.notranjski-park.si/obiskovanje/aktivnosti/pohodnistvo/spicasto-strazisce-spicka' </p><img src='./images/spicka.jpg' width='300' /></a>");
+ 
 
-    //Rakov skocjan
-    var marker = L.marker([45.791, 14.2955])
-    .addTo(map)
-    .bindPopup("<h3>Rakov Škocjan</h3> <p>Rakov Škocjan je kraška dolina ob severnem vznožju Javornikov, nastala z udiranjem in rušenjem stropa kraške jame. To dokazujeta 42 m visoki Mali naravni most, 37 m visoki Veliki naravni most ter soteski za njima.Po dnu ravnega ilovnatega dna vijuga potok Rak, obdan z lazi in poplavnimi travniki. Rak polnijo vode, ki se skozi podzemlje stekajo s Cerkniškega polja in izpod Javornikov. Rečica priteče na površje iz Zelških jam na vzhodni strani doline, ponikne pa v Tkalca jami na zahodnem delu.Skupaj s Cerkniškim jezerom in Križno jamo je Rakov Škocjan razglašen za mednarodno pomembno mokrišče - Ramsarsko območje. Dolina je tudi prvi slovenski krajinski park, ustanovljen že leta 1949. Po dolini je, kot se za tako naravno znamenitost spodobi, speljana tudi naravoslovna učna pot.<br> <a href='https://www.notranjski-park.si/narava/naravne-znamenitosti/rakov-skocjan' </p><img src='./images/rakov.jpg' width='300' /></a>");
+
+    //Sv. Marija
+    var NRPIcon = L.icon({
+        iconUrl: 'marker.png',
+        iconSize: [34, 34], // size of the icon
+        });
+
+    var marker = L.marker([45.83741, 14.23395], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #3CB371; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Sv. Marija</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+    //Sv. Duh
+    var NRPIcon = L.icon({
+        iconUrl: 'marker.png',
+        iconSize: [34, 34], // size of the icon
+        });
+
+    var marker = L.marker([45.83243, 14.24971], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #3CB371; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Sv. Duh</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+    //Opazovalnica 
+    var NRPIcon = L.icon({
+        iconUrl: 'marker.png',
+        iconSize: [34, 34], // size of the icon
+        });
+
+    var marker = L.marker([45.83512, 14.23642], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #3CB371; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Opazovalnica</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+     //Utrdba
+    var NRPIcon = L.icon({
+        iconUrl: 'marker.png',
+        iconSize: [34, 34], // size of the icon
+        });
+
+    var marker = L.marker([45.83806, 14.23911], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Opazovalnica Otoški grič</h3> <p>Malnšče je, po lokalnem poimenovanju njene lokacije, že peta opazovalnica za ptice v našem parku. Ta, za razliko od drugi štirih, ki stojijo na vzpetinah, stoji na ravnini, tik ob vodotoku Strženu, v kraju Gorenje Jezero. Gradbeni delavci jo postavljajo prav te dni.Namenili smo ji prostor ob mostu med Gorenjim Jezerom in Lazami, pod katerim teče Obrh, ki se po sotočju z Lipsenjščico preimenuje v Stržen. Domačini vedo povedati, da je tod nekoč stal mlin (»maln« po domače), zato je to območje znano pod imenom Malnšče.<br> <a href='https://www.notranjski-park.si/novice/ob-cerkniskem-jezeru-postavljamo-ze-peto-opazovalnico-za-ptice' </p><img src='./images/malensce.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #3CB371; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Utrdba Alpskega zidu</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+    //Grmada razgledišče
+    var NRPIcon = L.icon({
+        iconUrl: 'marker.png',
+        iconSize: [34, 34], // size of the icon
+        });
+
+    var marker = L.marker([45.8391, 14.24046], {icon: NRPIcon}).addTo(map).bindPopup("<h3>Grmada</h3> <p>Grmada je 873m visok vrh, ki se dviguje zahodno od Planinskega polja. Vrh je sicer poraščen, a se nam z razgledne točke, ki se nahaja le malo pod vrhom odpre čudovit pogled na Planinsko polje, Logaško planoto, Krim, Slivnico, del Cerkniškega jezera in gozdnatim Javornikom.<br> <a href='https://sl.wikipedia.org/wiki/Slivnica_(vzpetina)' </p><img src='./images/slivnica.jpg' width='300' /></a>");
+    marker.bindTooltip('<div style="color: #3CB371; text-shadow: -1px -1px 0 #F8F8F8, 1px -1px 0 #F8F8F8, -1px 1px 0 #F8F8F8, 1px 1px 0 #F8F8F8;font-size: 8pt; font-weight: bold; font-family: \'Montserrat\', sans-serif;"><b><b>Grmada</b>', {permanent: true, offset: [-10,-20]}).openTooltip();
+
+
     
-    //Strzen
-    var marker = L.marker([45.7476, 14.3846])
-    .addTo(map)
-    .bindPopup("<h3>Okljuki stržena</h3> <p>Med letoma 1844 in 1958 je namreč človek 14 kilometrov strug Stržena, Goriškega Brežička, Lipsenjščice, Tresenca in Žerovniščine, ki so prej meandrirale, izravnal v kanale za hitro odtekanje vode. Tako se je njihova dolžina za trikrat zmanjšala, to pa pomeni, da se v Cerkniškem jezeru zadržuje manj vode. Danes so negativne posledice, tudi zaradi podnebnih sprememb, ki vplivajo na bolj sušna poletja, vse bolj vidne. Jezero ne presiha več samo enkrat na tri ali štiri leta, temveč tudi trikrat letno. Izvedena renaturacija bo imela pozitivne učinke na vodno dinamiko presihajočega jezera ter rastlinske in živalske združbe. Z obnovo struge bo povečan habitat bobnarice, z vzpostavitvijo mirne cone pa bodo razmere za njeno uspešno gnezdenje še izboljšane..<br> <a href='https://www.kras.notranjski-park.si/novice-in-dogodki/zakaj-obnavljamo-potok-strzen/' </p><img src='./images/strzen.jpg' width='300' /></a>");
         </script>
     </body>
 </html>
