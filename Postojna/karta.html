@@ -36,6 +36,7 @@
         <script src="data/nrp_area_1.js"></script>
         <script src="data/PohodniskePoti_2.js"></script>
         <script src="data/PohodniskePoti_3.js"></script>
+        <script src="data/PohodniskePoti_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:18, minZoom:15
@@ -154,6 +155,47 @@
         });
         bounds_group.addLayer(layer_PohodniskePoti_3);
         map.addLayer(layer_PohodniskePoti_3);
+
+        //Rapalska
+        function pop_PohodniskePoti_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Dolzina_km</strong><br />' + (feature.properties['Dolzina_km'] !== null ? autolinker.link(feature.properties['Dolzina_km'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PohodniskePoti_4_0() {
+            return {
+                pane: 'pane_PohodniskePoti_4',
+                opacity: 1,
+                color: 'rgba(255,99,71,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PohodniskePoti_4');
+        map.getPane('pane_PohodniskePoti_4').style.zIndex = 402;
+        map.getPane('pane_PohodniskePoti_4').style['mix-blend-mode'] = 'normal';
+        var layer_PohodniskePoti_4 = new L.geoJson(json_PohodniskePoti_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PohodniskePoti_4',
+            layerName: 'layer_PohodniskePoti_4',
+            pane: 'pane_PohodniskePoti_4',
+            onEachFeature: pop_PohodniskePoti_4,
+            style: style_PohodniskePoti_4_0,
+        });
+        bounds_group.addLayer(layer_PohodniskePoti_4);
+        map.addLayer(layer_PohodniskePoti_4);
 
         //Zeleznica
         var zeleznica = L.icon({
